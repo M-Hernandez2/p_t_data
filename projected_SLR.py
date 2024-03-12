@@ -77,7 +77,7 @@ print(len(slr_all))
 for i in range(0, len(slr_all)):
     count.append((i/168)*100)
 
-plt.plot(count, slr_all, color = 'yellowgreen')
+plt.plot(count, slr_all, color = 'steelblue')
 plt.title('Sea Level Rise Projection Distribution')
 plt.xlabel('liklihood percent')
 plt.ylabel('SLR (in)')
@@ -86,25 +86,34 @@ plt.show()
 
 
 #violin plot
-positions = [0, 1]
+positions = [1]
 plt.figure(figsize=(8,6))
 slr1 = plt.violinplot([slr_all], positions=[1], showmeans=True, showmedians=True, showextrema=True, widths=0.9)
 
 for i in [slr1]:
     for patch in i['bodies']:
-        patch.set_facecolor('yellowgreen' if i == slr1 else 'black')
+        patch.set_facecolor('steelblue' if i == slr1 else 'black')
         patch.set_edgecolor('black')
 
 #set color for the lines
 for partname in ('cbars', 'cmins', 'cmaxes', 'cmeans', 'cmedians'):
     vp = slr1[partname]
-    vp.set_edgecolor('olivedrab')
+    vp.set_edgecolor('steelblue')
     vp.set_linewidth(2)
 
-plt.title('Historic and Projected Temperature Distributions')
-plt.xlabel('Groups')
-plt.ylabel('Values')
-plt.xticks(positions, ['Historic', 'Projected'])
+plt.title('Projected Sea Level Rise Distributions')
+plt.ylabel('inches')
+plt.xticks(positions, ['Projected Rise'])
 plt.show()
 
 
+
+#plot time series of just max, min, average values
+fig, ax = plt.subplots()
+ax.fill_between(slr_stats['year'], slr_stats['min'], slr_stats['max'], alpha=0.3, linewidth=0, color='steelblue')
+ax.plot(slr_stats['year'], slr_stats['average'], linewidth=2, color='steelblue', label='avg SLR')
+ax.legend(loc='upper left')
+plt.title('CMIP6 Sea Level Rise Projections')
+plt.xlabel('year')
+plt.ylabel('SLR (in)')
+plt.show()
