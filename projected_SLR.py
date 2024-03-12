@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 
 slr_total = pd.read_excel("C:/Users\mjh7517\OneDrive - The Pennsylvania State University\Downloads\SWI Research\SeaLevelRise\ipcc_ar6_slr.xlsx", sheet_name= 'SLR_total')
 slr_rates = pd.read_excel("C:/Users\mjh7517\OneDrive - The Pennsylvania State University\Downloads\SWI Research\SeaLevelRise\ipcc_ar6_slr.xlsx", sheet_name= 'SLR_rate')
+slr_stats = pd.read_excel("C:/Users\madis\OneDrive - The Pennsylvania State University\Research Papers\ipcc_ar6_slr.xlsx", sheet_name= 'SLR_stats')
 
 #create fill between plot of each scenario with line being the 50 interval and the shaded area being the 5-95 interval
 #fig, ax = plt.subplots()
