@@ -4,4 +4,9 @@ February 23, 2024
 
 Code and excel files used
 
-place to hold all my files for downloading and making visualizations for historic and projected p & t data
+excel files of data used
+
+code for creating time series and statistical distribution >> data vis
+
+code for creating sample space >> data vis
+
